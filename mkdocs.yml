@@ -1,0 +1,221 @@
+site_name: Applied AI Engineering
+site_description: The definitive textbook for Applied AI Engineering — from first principles to enterprise-grade production systems.
+site_author: Applied AI Engineering
+site_url: https://applied-ai-engineering.io
+repo_name: applied-ai-engineering
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/robot
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+    - toc.integrate
+
+extra_css:
+  - assets/css/extra.css
+
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - assets/js/extra.js
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: en
+  - glightbox
+  - minify:
+      minify_html: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/applied-ai-engineering
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Roadmap: roadmap.md
+
+  - "Vol 1 — Foundations":
+    - volumes/volume01-foundations/index.md
+    - "Ch 0 — Welcome":
+      - volumes/volume01-foundations/ch00-welcome/index.md
+    - "Ch 1 — History of AI":
+      - volumes/volume01-foundations/ch01-history/index.md
+    - "Ch 2 — Mathematics":
+      - volumes/volume01-foundations/ch02-mathematics/index.md
+    - "Ch 3 — Python Tools":
+      - volumes/volume01-foundations/ch03-python-tools/index.md
+
+  - "Vol 2 — Python Engineering":
+    - volumes/volume02-python/index.md
+    - "Ch 1 — Python Fundamentals":
+      - volumes/volume02-python/ch01-fundamentals/index.md
+    - "Ch 2 — Scientific Python":
+      - volumes/volume02-python/ch02-scientific-python/index.md
+    - "Ch 3 — Engineering Practices":
+      - volumes/volume02-python/ch03-engineering/index.md
+
+  - "Vol 3 — Machine Learning":
+    - volumes/volume03-ml/index.md
+    - "Ch 1 — ML Fundamentals":
+      - volumes/volume03-ml/ch01-fundamentals/index.md
+    - "Ch 2 — Supervised Learning":
+      - volumes/volume03-ml/ch02-supervised/index.md
+    - "Ch 3 — Unsupervised Learning":
+      - volumes/volume03-ml/ch03-unsupervised/index.md
+    - "Ch 4 — Evaluation":
+      - volumes/volume03-ml/ch04-evaluation/index.md
+
+  - "Vol 4 — Deep Learning":
+    - volumes/volume04-deep-learning/index.md
+    - "Ch 1 — Neural Networks":
+      - volumes/volume04-deep-learning/ch01-neural-networks/index.md
+    - "Ch 2 — Training":
+      - volumes/volume04-deep-learning/ch02-training/index.md
+    - "Ch 3 — CNNs":
+      - volumes/volume04-deep-learning/ch03-cnn/index.md
+    - "Ch 4 — RNNs & LSTMs":
+      - volumes/volume04-deep-learning/ch04-rnn/index.md
+
+  - "Vol 5 — Transformers":
+    - volumes/volume05-transformers/index.md
+    - "Ch 1 — Attention Mechanism":
+      - volumes/volume05-transformers/ch01-attention/index.md
+    - "Ch 2 — Transformer Architecture":
+      - volumes/volume05-transformers/ch02-transformer-arch/index.md
+    - "Ch 3 — Pre-trained Models":
+      - volumes/volume05-transformers/ch03-pretrained/index.md
+
+  - "Vol 6 — Large Language Models":
+    - volumes/volume06-llms/index.md
+    - "Ch 1 — LLM Foundations":
+      - volumes/volume06-llms/ch01-foundations/index.md
+    - "Ch 2 — Prompt Engineering":
+      - volumes/volume06-llms/ch02-prompting/index.md
+    - "Ch 3 — Fine-Tuning":
+      - volumes/volume06-llms/ch03-finetuning/index.md
+    - "Ch 4 — Alignment":
+      - volumes/volume06-llms/ch04-alignment/index.md
+
+  - "Vol 7 — RAG":
+    - volumes/volume07-rag/index.md
+    - "Ch 1 — RAG Fundamentals":
+      - volumes/volume07-rag/ch01-fundamentals/index.md
+    - "Ch 2 — Vector Stores":
+      - volumes/volume07-rag/ch02-vector-stores/index.md
+    - "Ch 3 — Advanced RAG":
+      - volumes/volume07-rag/ch03-advanced-rag/index.md
+
+  - "Vol 8 — AI Agents":
+    - volumes/volume08-agents/index.md
+    - "Ch 1 — Agent Fundamentals":
+      - volumes/volume08-agents/ch01-fundamentals/index.md
+    - "Ch 2 — Frameworks":
+      - volumes/volume08-agents/ch02-frameworks/index.md
+    - "Ch 3 — Multi-Agent Systems":
+      - volumes/volume08-agents/ch03-multi-agent/index.md
+
+  - "Vol 9 — MLOps":
+    - volumes/volume09-mlops/index.md
+    - "Ch 1 — Infrastructure":
+      - volumes/volume09-mlops/ch01-infrastructure/index.md
+    - "Ch 2 — Deployment":
+      - volumes/volume09-mlops/ch02-deployment/index.md
+    - "Ch 3 — Monitoring":
+      - volumes/volume09-mlops/ch03-monitoring/index.md
+
+  - "Vol 10 — Enterprise AI":
+    - volumes/volume10-enterprise-ai/index.md
+    - "Ch 1 — AI Strategy":
+      - volumes/volume10-enterprise-ai/ch01-strategy/index.md
+    - "Ch 2 — Architecture":
+      - volumes/volume10-enterprise-ai/ch02-architecture/index.md
+    - "Ch 3 — Governance":
+      - volumes/volume10-enterprise-ai/ch03-governance/index.md
+
+  - Labs: labs/index.md
+  - Projects: projects/index.md
+  - Quizzes: quizzes/index.md
+  - Glossary: glossary/index.md
+  - References: references/index.md
+  - Appendix: appendix/index.md
