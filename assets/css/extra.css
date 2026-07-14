@@ -1,0 +1,236 @@
+/* ── Typography ── */
+:root {
+  --md-text-font: "Inter", sans-serif;
+  --md-code-font: "JetBrains Mono", monospace;
+}
+
+/* ── Hero Banner ── */
+.hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #0ea5e9 100%);
+  border-radius: 16px;
+  padding: 64px 48px;
+  margin-bottom: 32px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,.08)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  color: white !important;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: .85;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-badge {
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: .875rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+/* ── Volume Cards ── */
+.volume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.volume-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow .2s, transform .2s;
+  text-decoration: none !important;
+  display: block;
+  color: inherit !important;
+}
+
+.volume-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+}
+
+.volume-card .vol-number {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 8px;
+}
+
+.volume-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.volume-card p {
+  font-size: .9rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+}
+
+/* ── Callout Chips ── */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.chip {
+  background: var(--md-primary-fg-color--light);
+  color: var(--md-primary-fg-color);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* ── Learning Path ── */
+.learning-path {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 24px 0;
+}
+
+.path-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-left: 2px solid var(--md-primary-fg-color--light);
+  padding-left: 24px;
+  position: relative;
+}
+
+.path-step::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  position: absolute;
+  left: -7px;
+  top: 22px;
+  flex-shrink: 0;
+}
+
+.path-step:last-child {
+  border-left-color: transparent;
+}
+
+.path-step .step-num {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  min-width: 24px;
+}
+
+/* ── Stat Tiles ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.stat-tile {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-tile .stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  line-height: 1;
+}
+
+.stat-tile .stat-label {
+  font-size: .8rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 4px;
+}
+
+/* ── Chapter header ── */
+.chapter-meta {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: .875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.chapter-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ── Equation labels ── */
+.eq-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eq-label .eq-num {
+  font-size: .8rem;
+  color: var(--md-default-fg-color--light);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ── Dark mode overrides ── */
+[data-md-color-scheme="slate"] .hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 50%, #0284c7 100%);
+}
+
+[data-md-color-scheme="slate"] .volume-card {
+  border-color: rgba(255,255,255,.08);
+}
+
+[data-md-color-scheme="slate"] .volume-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
